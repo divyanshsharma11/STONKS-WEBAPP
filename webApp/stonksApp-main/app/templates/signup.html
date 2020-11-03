@@ -1,0 +1,36 @@
+<html lang="en" style="background: #f9f9f9;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <div class="nav_bar">
+        <img src="{{url_for('static', filename='logo.png')}}" class="our_logo" />
+        <div class="logo_text" style="text-align: center;">Sign in to Stonks</div>
+        {% if error %}
+        <div class="error_style">{{error_text}}</div>
+        {% endif %}
+        <form action="/AuthSign" method="POST" class="login-form" autocomplete="off">
+
+            <p class="placeholder">Username</p>
+            <p><input type="text" name="user_name" class="center-align form-input"></p>
+            <p class="placeholder">User PIN</p>
+            <p><input type="text" name="user_pin" class="center-align form-input"></p>
+            <p><input type="submit" value="SignIn" class="center-align form-button"></p>
+
+        </form>
+
+        <div class="alt-link center-align">
+            Already have an account? <a href="login">login</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

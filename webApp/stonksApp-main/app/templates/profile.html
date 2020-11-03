@@ -1,0 +1,94 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body class="stocks-body">
+
+    <div class="header">
+        <img src="{{ url_for('static',filename='logo.png') }}" class="logo">
+        <div class="company-name">Stonks</div>
+        <a href="/signout">signout</a>
+    </div>
+
+    <h1 style="text-align: center; font-weight: 400;">👋 Welcome {{ user_name }}</h1>
+
+    <div class="stock-nav-bar">
+        <form action="/addstock" method="post" class="add_stock_form">
+            <input type="text" name="new_stock" class="add_stock_form_input" placeholder=" stock symbol ">
+            <input type="submit" value="add stock" class="add_stock_form_button">
+        </form>
+    </div>
+
+    {% if stock|length != 0: %}
+    {% for i in range(stock|length) %}
+    <a href="/stock/{{ stock[i] }}" class="stocks" id="{{ stock[i] }}">
+
+        <div class="stock-name">StockName</div>
+        <div class="stock-id">{{ stock[i] }}</div>
+        <div class="delete_stock">
+            <form action="/deletestock" method="post">
+                <input type="hidden" name="delete_stock" value="{{ stock[i] }}">
+                <button type="submit">delete stock</button>
+            </form>
+        </div>
+        <div class="market">0.0</div>
+
+    </a>
+
+
+    {% endfor %}
+
+    {% else: %}
+    <div class="no-stock-error"> No stock found 😢, Use the nav bar 🍫 above 👆 to add stocks 💹</div>
+
+    {% endif %}
+
+
+
+
+
+
+    <script>
+        async function fetchMarket(stockName) {
+
+            const response = await fetch('http://stonksapi.herokuapp.com/getmarket/' + stockName);
+            const myJson = await response.json();
+            console.log(myJson)
+            elm = document.getElementById(stockName).childNodes
+            for (var i = 0; i < elm.length; i++) {
+                if (elm[i].className == "stock-name") {
+                    elm[i].innerHTML = myJson.stock_name
+                }
+
+                if (elm[i].className == "market") {
+                    elm[i].innerHTML = myJson.marketprice
+                }
+            }
+
+        }
+
+
+
+        function realtimefetch() {
+            el = document.getElementsByClassName("stocks")
+
+            for (var i = 0; i < el.length; i++) {
+                fetchMarket(el[i].id)
+            }
+        }
+
+        setInterval(realtimefetch, 2000)
+
+
+    </script>
+</body>
+
+</html>

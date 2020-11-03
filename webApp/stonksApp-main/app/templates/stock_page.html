@@ -1,0 +1,122 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='stock_page.css') }}">
+
+    <title id="title">{{stock_name}}</title>
+</head>
+
+<body class="stocks-body">
+
+
+    <div class="header">
+        <img src="{{ url_for('static',filename='logo.png') }}" class="logo">
+        <div class="company-name">Stonks</div>
+        <a href="/signout">signout</a>
+    </div>
+
+    <div class="stock-banner">
+        <div class="banner-center-align">
+            <div class="stock-name" id="stock-name">{{stock_name}}</div>
+            <div class="stock-price-display">
+                <p class="market-price" id="{{stock}}">0.0</p>
+                <p>Market price</p>
+            </div>
+            <div class="button-wrapper">
+                <a href="../static/{{user_name}}/{{stock_name}}.xlsx" download class="download-button">download <i
+                        class="far fa-file-excel"></i></a>
+
+                <a href="../static/{{user_name}}/{{stock_name}}.png" download class="download-button">download <i
+                        class="fas fa-chart-line"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="stock-content">
+        <div class="content-block">
+            <p class="stock-key">previous close</p>
+            <p class="stock-key-value">{{ data['Previous_close']}}</p>
+        </div>
+
+        <div class="content-block">
+            <p class="stock-key">Open price</p>
+            <p class="stock-key-value">{{ data['Open_price']}}</p>
+        </div>
+
+        <div class="content-block">
+            <p class="stock-key">Bid</p>
+            <p class="stock-key-value">{{ data['Bid']}}</p>
+        </div>
+
+        <div class="content-block">
+            <p class="stock-key">Ask</p>
+            <p class="stock-key-value">{{ data['Ask']}}</p>
+        </div>
+
+        <div class="content-block">
+            <p class="stock-key">Days range</p>
+            <p class="stock-key-value">{{ data['Days-range']}}</p>
+        </div>
+
+        <div class="content-block">
+            <p class="stock-key">52 weeks range</p>
+            <p class="stock-key-value">{{ data['52_weeks_range']}}</p>
+        </div>
+
+        <div class="content-block">
+            <p class="stock-key">Volume</p>
+            <p class="stock-key-value">{{ data['Volume']}}</p>
+        </div>
+
+        <div class="content-block">
+            <p class="stock-key">Avg volume</p>
+            <p class="stock-key-value">{{ data['Avg_volume']}}</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+        async function fetchmarket(stockName) {
+
+            console.log(stockName)
+            const response = await fetch('http://stonksapi.herokuapp.com/getmarket/' + stockName);
+            const myJson = await response.json();
+
+            document.getElementById(stockName).innerHTML = myJson.marketprice
+        }
+
+        async function fetchname(stockName) {
+
+            console.log("stock name changed")
+            const response = await fetch('http://stonksapi.herokuapp.com/getmarket/' + stockName);
+            const myJson = await response.json();
+
+            document.getElementById("stock-name").innerHTML = myJson.stock_name
+            document.getElementById("title").innerText = myJson.stock_name
+        }
+
+        el = document.getElementsByClassName("market-price")
+        stock_id = el[0].id
+
+        fetchname(stock_id)
+        setInterval(fetchmarket, 2000, stock_id)
+
+
+    </script>
+
+</body>
+
+</html>

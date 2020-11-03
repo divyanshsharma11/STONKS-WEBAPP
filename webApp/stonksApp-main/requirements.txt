@@ -1,0 +1,8 @@
+flask
+gunicorn
+datetime
+openpyxl
+pandas_datareader
+matplotlib
+numpy
+pandas

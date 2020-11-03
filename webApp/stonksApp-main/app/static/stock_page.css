@@ -1,0 +1,116 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Work Sans', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+
+
+.header{
+    padding: 0px 36px;
+    height: 80px;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 15px 0px;
+
+}
+
+.stock-banner{
+    background: url("./graph-bg.svg");
+    height: 400px;
+    position: relative;
+    background-size: cover;
+}
+
+.company-name{
+    float: left;
+    line-height: 80px;
+    padding-left: 20px;
+    font-size: 20pt;
+}
+
+.header>a{
+    float: right;
+    line-height: 80px;
+    font-size: 12pt;
+    text-decoration: none;
+    color: red;
+}
+
+.stock-name{
+    text-align: center;
+    font-weight: 600;
+    font-size: 20pt;
+    width: 100%;
+}
+
+.stock-price-display{
+    
+    text-align: center;
+    width: 100%;
+}
+
+.banner-center-align{
+    width: 90%;
+    padding: 0px 5%;
+
+    position: absolute;
+    top: 50%;
+    transform: translate(0px,-50px);
+}
+
+.market-price{
+    font-size: 20pt;
+    font-weight: 500;
+    
+}
+
+
+.stock-content{
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    font-size: 13pt;
+}
+
+.stock-key{
+    float: left;
+}
+
+.stock-key-value{
+    float: right;
+    font-weight: 600;
+}
+
+.content-block{
+    height: 80px;
+    display: flow-root;
+}
+
+.download-button{
+    height: 50px;
+    width: 140px;
+    background-color: #009aff;
+    line-height: 50px;
+    color: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0px 10px;
+}
+
+.download-button>i{
+    font-size: 15pt;
+}
+
+.button-wrapper{
+    display: flex;
+    place-content: center;
+}

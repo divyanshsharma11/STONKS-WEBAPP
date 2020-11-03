@@ -1,0 +1,218 @@
+
+html{
+    padding: 0px;
+
+}
+
+body{
+    margin: 0px;
+    position: relative;
+    font-family: 'Work Sans', sans-serif;
+    background: url(wall.jpg);
+    background-size: cover;
+
+
+}
+
+.stocks-body{
+    background-color: black;
+    color: white;
+    background-image: none;
+}
+
+.header{
+    padding: 0px 36px;
+    height: 80px;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 15px 0px;
+
+}
+
+
+
+.our_logo{
+    height: 150px;
+    display: block;
+    margin: 0px auto;
+}
+
+.logo_text{
+    text-align: center;
+    margin: 30px 0px;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.company-name{
+    float: left;
+    line-height: 80px;
+    padding-left: 20px;
+    font-size: 20pt;
+}
+
+.header>a{
+    float: right;
+    line-height: 80px;
+    font-size: 12pt;
+    text-decoration: none;
+    color: red;
+}
+
+.nav_bar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: white;
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.login-form{
+    margin: 0px auto;
+    width: 300px;
+    display: block;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.center-align{
+    margin: 0px auto;
+    display: block;
+}
+
+.form-input{
+    width: 90%;
+    height: 40px;
+    border: 1px solid #e5e9eb;
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
+.form-button{
+    width: 90%;
+    height: 40px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #009aff;
+    font-weight: 600;
+    color: white;
+}
+
+.placeholder{
+    text-align: left;
+    padding: 0% 5%;
+    font-weight: 500;
+}
+
+.alt-link{
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 10px;
+    background-color: #0f0f10;
+    border-radius: 10px;
+    color: white;
+}
+
+
+.error_style{
+    background: #ffb0b0;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px 0px;
+    border: 0.1em solid red;
+}
+
+.stocks{
+    min-width: 300px;
+    margin: 0px auto;
+    padding: 20px 20px;
+    display: block;
+    margin-top: 10px;
+    color: #009aff;
+    max-width: 600px;
+    height: 80px;
+    border-bottom: 1px solid #e8e8e8;
+    text-decoration: none;
+}
+
+.stock-name{
+    text-align: left;
+    font-weight: 400;
+    font-size: 15pt;
+    width: 100%;
+    margin-bottom: 10px;
+
+}
+
+.stock-id{
+    float: left;
+    font-size: 20px;
+    background: #2facffa8;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+
+
+.market{
+
+    font-weight: 500;
+    float: right;
+    font-size: 30px;
+    padding-right: 10px;
+}
+
+.delete_stock{
+    float: right;
+}
+
+.delete_stock button{
+    background: #ffb8b8;
+    border: none;
+    color: red;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.add_stock_form{
+    margin: 0px auto;
+    align-content: center;
+    display: table;
+}
+
+.add_stock_form_input{
+    height: 40px;
+    width: 200px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 5px;
+}
+
+.add_stock_form_button{
+    margin: 0px 10px;
+    height: 40px;
+    background: #009aff;
+    border: 0;
+    border-radius: 5px;
+    width: 80px;
+    color: white;
+}
+
+.stocks:hover{
+    background-color: #e1f2ff1f;
+}
+
+.no-stock-error{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)
+}
