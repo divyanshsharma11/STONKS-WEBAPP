@@ -1,0 +1,32 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color:#009aff;
+    position: relative;
+}
+
+.login-form{
+    margin: 0px auto;
+    width: 300px;
+    display: block;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.center-align{
+    margin: 0px auto;
+    display: block;
+}
+
+.form-input{
+    width: 80%;
+}
+
+.form-button{
+    width: 60%;
+}
