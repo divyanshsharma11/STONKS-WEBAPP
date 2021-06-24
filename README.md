@@ -1,4 +1,4 @@
-# Stock Marktet Webapp
+# Stock Market Webapp
 * ***This is a collaborative project created by a team of 3 students***
 * ***This is web-app which we have created by using languages like HTML,CSS,FLASK,PYTHON,JAVASCRIPT.***
 * ***It basically allows the user to create a watchlist of stocks(chosen by the user).***
