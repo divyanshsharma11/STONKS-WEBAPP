@@ -1,5 +1,5 @@
 # Stock Market Webapp
-* ***This is a collaborative project created by a team of 3 students***
+* ***This is a collaborative project created by a team of three***
 * ***This is web-app which we have created by using languages like HTML,CSS,FLASK,PYTHON,JAVASCRIPT.***
 * ***It basically allows the user to create a watchlist of stocks(chosen by the user).***
 * ***It shows real-time price of the added stock and also allows the user to download the data of the stock as an Excel file and also download the graph of the stock too.***
